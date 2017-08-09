@@ -8,7 +8,7 @@ var app = express();
 // app.use(express.static(__dirName + '/../react-client/dist'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World. We are the REAL Hungry Hippos.');
+  res.send('Hello World and Martin');
 });
 
 app.listen(process.env.PORT, function() {
