@@ -15,6 +15,7 @@ USE pass_database;
 
 CREATE TABLE users (
   id int PRIMARY KEY AUTO_INCREMENT,
+  user_name VARCHAR(50),
   email VARCHAR(50) UNIQUE,
   password VARCHAR(100),
   salt VARCHAR(50),
@@ -92,7 +93,7 @@ CREATE TABLE restricted_studios (
   );
 
 INSERT INTO users (
-  id,
+  user_name,
   email,
   password,
   salt,
@@ -102,7 +103,7 @@ INSERT INTO users (
   created_at,
   updated_at
   ) VALUES (
-    1,
+  'BB123',
   'billy@bob.com',
   'Svds356password1',
   'cPjfn67sdvfg456salt1',
@@ -112,7 +113,7 @@ INSERT INTO users (
   '2017-03-05',
   '2017-03-09'
   ), (
-    2,
+  'SallySeller',
   'sally@sal.com',
   'oniyGyf67password2',
   '8nJHBh665vhJhsalt2',
@@ -121,7 +122,7 @@ INSERT INTO users (
   '1112224444',
   '2017-04-15',
   NULL),(
-    3,
+  'DavidD',
   'david45@gmail.com',
   'Lcdf87gf8HJpassword3',
   'vByt76912salt3',
@@ -129,6 +130,24 @@ INSERT INTO users (
   'Drummer',
   '9998887777',
   '2017-06-09',
+  NULL),(
+  'KimKimmy',
+  'kim@gmail.com',
+  'pH78J76GJHbghj',
+  'Ghyt7x67dp',
+  'Kim',
+  'Kimmers',
+  '1112223333',
+  '2017-05-10',
+  NULL),(
+  'SuperSeller',
+  'Seller123@gmail.com',
+  'nkj6hf84ngiJ',
+  'jUh6G72hIhkK',
+  'Sammy',
+  'Saul',
+  '5556667777',
+  '2017-06-07',
   NULL
   );
 
@@ -170,7 +189,6 @@ INSERT INTO reviews (
   );
 
 INSERT INTO for_sale_block (
-    id,
     pass_volume,
     seller_id,
     current_price,
@@ -178,7 +196,6 @@ INSERT INTO for_sale_block (
     period_end,
     passes_sold
   ) VALUES (
-    1,
     15,
     2,
     8.90,
@@ -186,7 +203,6 @@ INSERT INTO for_sale_block (
     '2017-04-30',
     4
   ), (
-    2,
     9,
     2,
     9.00,
@@ -194,7 +210,20 @@ INSERT INTO for_sale_block (
     '2017-06-01',
     1
   ), (
+    8,
+    2,
+    9.20,
+    '2017-06-07',
+    '2017-06-14',
+    1
+  ), (
+    7,
     3,
+    9.10,
+    '2017-05-03',
+    '2017-06-01',
+    2
+  ), (
     11,
     1,
     10.00,
@@ -213,17 +242,27 @@ INSERT INTO messages (
     2,
     '2017-05-06 11:12:13',
     'Hi, how are you doing?'
-  ),  (
+  ), (
     2,
     1,
     '2017-05-06 11:12:45',
     'I\'m great! Do you have class passes?'
-  ),  (
+  ), (
     1,
     2,
     '2017-05-06 11:13:40',
     'Absolutely!'
-  ),  (
+  ), (
+    2,
+    1,
+    '2017-05-06 11:20:10',
+    'I would like to buy 9 passes.'
+  ), (
+    2,
+    3,
+    '2017-02-05 15:38:52',
+    'Thanks for reaching out. I do have passes to sell.'
+  ), (
     3,
     2,
     '2017-02-05 15:40:01',
