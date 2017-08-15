@@ -144,11 +144,34 @@ app.post('/pass/buyer/search', (req, res) => {
 });
 
 app.post('/pass/seller/search', (req, res) => {
+  console.log('POST MADE IT!');
+  var callback = function(info) { res.end(info)};
+  function (req, callback(info)) {
+    callback(var query = connection.query('SELECT * FROM for_sale_block WHERE seller_id = currentUserId;'));
+  }
+
+//need to wrap any queries in a variable with a callback function to return the results
+//and export them
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+
+
   // for displaying all seller history of pass records - req obj has seller id
   // call to db for passes based on user id
   // if successful, return records
   // else send error message try again
   // how granular can the error be?
+});
+
+app.post('/pass/seller/current', (req, res) => {
+  // for displaying current seller pass records - req obj has seller id
+  // call to db for passes based on user id
+  // if successful, return records
+  // else send error message try again
+  // how granular can the error be?
+
 });
 
 app.post('/pass/seller/clone', (req, res) => {
