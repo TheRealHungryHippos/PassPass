@@ -22,7 +22,9 @@ CREATE TABLE users (
   last_name VARCHAR(50),
   phone VARCHAR(10),
   created_at DATE,
-  updated_at DATE
+  updated_at DATE,
+  rating int,
+  review_count int
   );
 
 CREATE TABLE sessions (
@@ -82,7 +84,7 @@ CREATE TABLE for_sale_block (
   current_price DECIMAL(5,2),
   period_start DATE,
   period_end DATE,
-  passes_sold int,
+  passes_sold int
   FOREIGN KEY (seller_id) REFERENCES users(id)
 );
 
@@ -102,7 +104,9 @@ INSERT INTO users (
   last_name,
   phone,
   created_at,
-  updated_at
+  updated_at,
+  rating,
+  review_count
   ) VALUES (
     1,
   'billy@bob.com',
@@ -112,7 +116,9 @@ INSERT INTO users (
   'Bob',
   '3332224444',
   '2017-03-05',
-  '2017-03-09'
+  '2017-03-09',
+  4,
+  4
   ), (
     2,
   'sally@sal.com',
@@ -122,7 +128,10 @@ INSERT INTO users (
   'Sal',
   '1112224444',
   '2017-04-15',
-  NULL),(
+  NULL,
+  3,
+  10
+  ),(
     3,
   'david45@gmail.com',
   SHA2('davidsPasswordvByt76912s', 0),
@@ -131,7 +140,9 @@ INSERT INTO users (
   'Drummer',
   '9998887777',
   '2017-06-09',
-  NULL
+  NULL,
+  4.5,
+  20
   );
 
 -- removed insert for sessions table, unsure what data should look like

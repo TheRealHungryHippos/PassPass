@@ -1,5 +1,10 @@
 import React from 'react';
 import $ from 'jquery';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import SignUpBox from './SignUpBox.jsx';
 import SignInBox from './SignInBox.jsx';
 
@@ -16,7 +21,6 @@ class AppLoggedOut extends React.Component {
           <h1 className="signedOutLogo">PassPass</h1>
           <small>The Marketplace for Classpass Classes</small>
         </div>
-        <a href="logged-in.html">logged-in</a>
         <div className="signInContainerRow">
           <SignInBox />
         </div>
