@@ -84,7 +84,7 @@ CREATE TABLE for_sale_block (
   current_price DECIMAL(5,2),
   period_start DATE,
   period_end DATE,
-  passes_sold int
+  passes_sold int,
   FOREIGN KEY (seller_id) REFERENCES users(id)
 );
 
@@ -261,8 +261,12 @@ INSERT INTO restricted_list (
     2
   ), (
     2,
-    'Edmond Climbing, Gold Gym',
+    'Edmond Climbing,Gold Gym',
     1
+  ), (
+    3,
+    'none',
+    NULL
   );
 
 INSERT INTO restricted_studios (
@@ -271,4 +275,10 @@ INSERT INTO restricted_studios (
   ) VALUES (
     1,
     2
+  ), (
+    2,
+    3
+  ), (
+    3,
+    3
   );
