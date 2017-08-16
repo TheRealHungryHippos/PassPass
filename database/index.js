@@ -93,8 +93,7 @@ module.exports.getForSaleBlocks = function(searchQueries, callback) {
     }
   }
   module.exports.connection.query(queryString, function(error, results, fields) {
-    error && callback(error, null);
-    results && callback(null, results);
+    callback(error, results);
   });
 };
 
